@@ -1,4 +1,12 @@
 <script>
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap";
+    document.head.appendChild(link);
+  });
 </script>
 
 <style>
@@ -17,14 +25,25 @@
     --blue: rgb(137, 180, 250);
     --sapphire: rgb(116, 199, 236);
     --lavender: rgb(180, 190, 254);
+    --base: rgb(30, 30, 46);
+    --mantle: rgb(24, 24, 37);
+    --crust: rgb(17, 17, 27);
+    --text: rgb(205, 214, 244);
   }
 
   .background {
-    background-color: var(--blue);
+    background-color: var(--base);
   }
-  </style>
 
+  .white_text {
+    color: var(--text);
+    text-align: center;
+    font-family: "Noto sans";
+  }
+</style>
 
-<body class="background">
-  <h1>hi</h1>
-</body>
+<div class="white_text">
+  <body class="background">
+    <h1>hi</h1>
+  </body>
+</div>
