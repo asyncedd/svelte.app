@@ -1,15 +1,7 @@
-<script>
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap";
-    document.head.appendChild(link);
-  });
-</script>
+<script></script>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
   :root {
     --rosewater: rgb(245, 224, 220);
     --flamingo: rgb(242, 205, 205);
@@ -39,7 +31,7 @@
     color: var(--text);
     text-align: center;
     font-family: "Noto sans";
-    font-display: swap;
+  font-display: swap;
   }
 </style>
 
