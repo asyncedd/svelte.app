@@ -1,2 +1,30 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+</script>
+
+<style>
+  :root {
+    --rosewater: rgb(245, 224, 220);
+    --flamingo: rgb(242, 205, 205);
+    --pink: rgb(245, 194, 231);
+    --mauve: rgb(203, 166, 247);
+    --red: rgb(243, 139, 168);
+    --maroon: rgb(235, 160, 172);
+    --peach: rgb(250, 179, 135);
+    --yellow: rgb(249, 226, 175);
+    --green: rgb(166, 227, 161);
+    --teal: rgb(148, 226, 213);
+    --sky: rgb(137, 220, 235);
+    --blue: rgb(137, 180, 250);
+    --sapphire: rgb(116, 199, 236);
+    --lavender: rgb(180, 190, 254);
+  }
+
+  .background {
+    background-color: var(--blue);
+  }
+  </style>
+
+
+<body class="background">
+  <h1>hi</h1>
+</body>
