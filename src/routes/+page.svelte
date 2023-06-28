@@ -35,6 +35,5 @@
 		color: var(--text);
 		text-align: center;
 		font-family: 'Noto sans';
-		font-display: swap;
 	}
 </style>
