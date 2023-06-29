@@ -1,6 +1,6 @@
 <div class="white_text">
 	<body class="background">
-		<h1 class="mx-auto text-center text-5xl antialiased">hi</h1>
+		<h1 class="mx-auto text-center text-5xl antialiased leading-relaxed">hi</h1>
 	</body>
 </div>
 
