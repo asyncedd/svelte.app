@@ -1,8 +1,6 @@
-<div class="white_text">
-	<body class="bg-ctp-base background">
-		<h1 class="text-ctp-sky mx-auto text-center text-5xl antialiased leading-relaxed">hi</h1>
-	</body>
-</div>
+<body>
+	<h1>hi</h1>
+</body>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
@@ -11,9 +9,12 @@
 	@tailwind components;
 	@tailwind utilities;
 
-	.white_text {
-		color: var(--text);
-		text-align: center;
+	body {
+		@apply bg-ctp-base;
+	}
+
+	h1 {
 		font-family: 'Noto sans';
+		@apply text-ctp-sky mx-auto text-center text-[50px] antialiased;
 	}
 </style>
