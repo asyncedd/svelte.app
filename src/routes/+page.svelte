@@ -1,11 +1,15 @@
 <div class="white_text">
 	<body class="background">
-		<h1>hi</h1>
+		<h1 class="mx-auto text-center text-5xl antialiased">hi</h1>
 	</body>
 </div>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
 	:root {
 		/* --rosewater: rgb(245, 224, 220); */
 		/* --flamingo: rgb(242, 205, 205); */
