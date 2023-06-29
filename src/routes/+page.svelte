@@ -15,6 +15,6 @@
 
 	h1 {
 		font-family: 'Noto sans';
-		@apply text-ctp-sky mx-auto text-center text-[50px] antialiased;
+		@apply m-8 text-ctp-sky mx-auto text-center text-[50px] antialiased;
 	}
 </style>
