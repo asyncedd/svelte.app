@@ -1,6 +1,69 @@
+<script>
+	import { onMount } from 'svelte';
+
+	let showPopup = true;
+
+	function handleScroll() {
+		const threshold = 100; // Adjust this value as needed
+		if (window.scrollY > threshold) {
+			showPopup = false;
+		}
+	}
+
+	onMount(() => {
+		window.addEventListener('scroll', handleScroll);
+
+		handleScroll();
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
+</script>
+
+{#if showPopup}
+	<div class="popup show">Scroll down</div>
+{/if}
+
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <body class="dark:bg-ctp-base light:bg-ctp-text">
 	<span class="inline-block align-middle" />
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
+	<h1>HI</h1>
 	<h1>HI</h1>
 </body>
 
@@ -16,5 +79,24 @@
 			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		@apply m-8 flex place-content-center text-ctp-sky mx-auto text-center text-[100px] antialiased text-transparent;
 		-webkit-text-stroke: 3px #cdd6f4;
+	}
+
+	.popup {
+		position: fixed;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 10px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		z-index: 9999;
+		transition: opacity 0.5s ease-out; /* Added transition property */
+	}
+
+	.popup:not(.show) {
+		opacity: 1; /* Hide the popup */
+		pointer-events: none; /* Disable pointer events */
 	}
 </style>
