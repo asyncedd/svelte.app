@@ -87,8 +87,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		padding: 10px;
-		background-color: #fff;
-		border: 1px solid #ddd;
+		@apply bg-ctp-text text-ctp-base;
 		border-radius: 4px;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 		z-index: 9999;
