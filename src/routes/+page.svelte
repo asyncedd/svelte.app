@@ -1,5 +1,5 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<body>
+<body class="dark:bg-ctp-base light:bg-ctp-text">
 	<span class="inline-block align-middle" />
 	<h1>HI</h1>
 </body>
@@ -10,10 +10,6 @@
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
-
-	body {
-		@apply bg-ctp-base;
-	}
 
 	h1 {
 		font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
