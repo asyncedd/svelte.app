@@ -11,13 +11,8 @@
 	}
 
 	onMount(() => {
-		window.addEventListener('scroll', handleScroll);
-
 		handleScroll();
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
+		window.addEventListener('scroll', handleScroll);
 	});
 </script>
 
