@@ -1,12 +1,17 @@
 <script>
 	import { onMount } from 'svelte';
 
-	let showPopup = true;
+	let showPopup = false;
+	let showedPopup = false;
 
 	function handleScroll() {
 		const threshold = 100; // Adjust this value as needed
-		if (window.scrollY > threshold) {
+		if (!(window.scrollY > threshold) && !showedPopup) {
+			showPopup = true;
+			showedPopup = true;
+		} else {
 			showPopup = false;
+			showedPopup = true;
 		}
 	}
 
@@ -82,15 +87,16 @@
 		left: 50%;
 		transform: translateX(-50%);
 		padding: 10px;
-		@apply bg-ctp-text text-ctp-base;
+		@apply bg-ctp-base text-ctp-sky;
 		border-radius: 4px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4px 4px #11111b;
 		z-index: 9999;
+		opacity: 1; /* Hide the popup */
 		transition: opacity 0.5s ease-out; /* Added transition property */
 	}
 
 	.popup:not(.show) {
-		opacity: 1; /* Hide the popup */
+		opacity: 0; /* Hide the popup */
 		pointer-events: none; /* Disable pointer events */
 	}
 </style>
