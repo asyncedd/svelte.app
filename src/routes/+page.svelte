@@ -89,12 +89,10 @@
 		border-radius: 4px;
 		box-shadow: 0 4px 4px #11111b;
 		z-index: 9999;
-		opacity: 1; /* Hide the popup */
 		transition: opacity 0.5s ease-out; /* Added transition property */
 	}
 
 	.popup:not(.show) {
-		opacity: 0; /* Hide the popup */
 		pointer-events: none; /* Disable pointer events */
 	}
 </style>
