@@ -80,6 +80,7 @@
 			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		@apply m-8 flex place-content-center text-ctp-sky mx-auto text-center text-[100px] antialiased text-transparent;
 		-webkit-text-stroke: 3px #cdd6f4;
+		scroll-behavior: smooth;
 	}
 
 	.popup {
