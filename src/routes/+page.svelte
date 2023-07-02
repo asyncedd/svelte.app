@@ -2,14 +2,17 @@
 	import { onMount } from 'svelte';
 
 	let showPopup = 0;
+	let y = 20;
 	let showedPopup = false;
 
 	function handleScroll() {
 		const threshold = 100; // Adjust this value as needed
 		if (!(window.scrollY > threshold) && !showedPopup) {
+			y = 20;
 			showPopup = 1;
 			showedPopup = true;
 		} else {
+			y = 0;
 			showPopup = 0;
 			showedPopup = true;
 		}
@@ -21,7 +24,7 @@
 	});
 </script>
 
-<div class="popup" style="opacity: {showPopup}">Scroll down</div>
+<div class="popup" style="opacity: {showPopup}; bottom: {y}px;">Scroll down</div>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <body class="dark:bg-ctp-base light:bg-ctp-text">
@@ -89,7 +92,7 @@
 		border-radius: 4px;
 		box-shadow: 0 4px 4px #11111b;
 		z-index: 9999;
-		transition: opacity 0.5s ease-out; /* Added transition property */
+		transition: opacity 0.5s ease-out, bottom 1s ease-out; /* Added transition property */
 		pointer-events: none; /* Disable pointer events */
 	}
 </style>
