@@ -9,9 +9,9 @@
 		try {
 			while (true) {
 				if (y > 20) {
-					y = y - 10;
+					y = y - 5;
 				} else {
-					y = y + 10;
+					y = y + 5;
 				}
 				await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for 1 second before repeating the loop
 			}
