@@ -5,6 +5,21 @@
 	let y = 20;
 	let showedPopup = false;
 
+	async function forY() {
+		try {
+			while (true) {
+				if (y > 20) {
+					y = y - 10;
+				} else {
+					y = y + 10;
+				}
+				await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for 1 second before repeating the loop
+			}
+		} catch (err) {
+			console.error(err);
+		}
+	}
+
 	function handleScroll() {
 		const threshold = 100; // Adjust this value as needed
 		if (!(window.scrollY > threshold) && !showedPopup) {
@@ -19,6 +34,7 @@
 	}
 
 	onMount(() => {
+		forY();
 		handleScroll();
 		window.addEventListener('scroll', handleScroll);
 	});
@@ -93,7 +109,7 @@
 		border-radius: 4px;
 		box-shadow: 0 4px 4px #11111b;
 		z-index: 9999;
-		transition: opacity 0.5s ease-out, bottom 1s ease-out; /* Added transition property */
+		transition: opacity 0.5s ease-out, bottom 0.5s ease-out; /* Added transition property */
 		pointer-events: none; /* Disable pointer events */
 	}
 </style>
