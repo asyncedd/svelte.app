@@ -21,7 +21,7 @@
 	});
 </script>
 
-<div class="popup show" style="opacity: {showPopup}">Scroll down</div>
+<div class="popup" style="opacity: {showPopup}">Scroll down</div>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <body class="dark:bg-ctp-base light:bg-ctp-text">
@@ -90,9 +90,6 @@
 		box-shadow: 0 4px 4px #11111b;
 		z-index: 9999;
 		transition: opacity 0.5s ease-out; /* Added transition property */
-	}
-
-	.popup:not(.show) {
 		pointer-events: none; /* Disable pointer events */
 	}
 </style>
