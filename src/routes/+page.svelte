@@ -9,9 +9,9 @@
 		try {
 			while (true) {
 				if (y > 20) {
-					y = y - 5;
+					y = y - 10;
 				} else {
-					y = y + 5;
+					y = y + 10;
 				}
 				await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for 1 second before repeating the loop
 			}
@@ -117,9 +117,9 @@
 		padding: 10px;
 		@apply text-ctp-base bg-ctp-sky;
 		border-radius: 4px;
-		box-shadow: 0 4px 4px #11111b;
+		box-shadow: 0px 4px 4px 0px rgba(137, 220, 235, 0.5);
 		z-index: 9999;
-		transition: opacity 0.5s ease-out, bottom 0.5s ease-out; /* Added transition property */
+		transition: opacity 0.5s ease-out, bottom 0.5s ease-in; /* Added transition property */
 		pointer-events: none; /* Disable pointer events */
 	}
 
