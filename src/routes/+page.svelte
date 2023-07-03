@@ -43,9 +43,16 @@
 	});
 </script>
 
-<div class="popup" style="opacity: {showPopup}; bottom: {y}px;">Scroll down</div>
-
 <link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+	rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+
+<div class="popup" style="opacity: {showPopup}; bottom: {y}px;">
+	<span class="material-symbols-outlined"> arrow_circle_down </span>
+</div>
+
 <body class="dark:bg-ctp-base light:bg-ctp-text">
 	<span class="inline-block align-middle" />
 	<h1>HI</h1>
@@ -114,5 +121,9 @@
 		z-index: 9999;
 		transition: opacity 0.5s ease-out, bottom 0.5s ease-out; /* Added transition property */
 		pointer-events: none; /* Disable pointer events */
+	}
+
+	.material-symbols-outlined {
+		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 	}
 </style>
