@@ -31,6 +31,7 @@
 		handleScroll();
 		window.addEventListener('scroll', handleScroll);
 
+		updateY();
 		const interval = setInterval(updateY, 1000); // Update y every 1 second
 
 		afterUpdate(() => {
