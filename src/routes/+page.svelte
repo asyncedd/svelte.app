@@ -115,7 +115,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		padding: 10px;
-		@apply bg-ctp-base text-ctp-sky;
+		@apply text-ctp-base bg-ctp-sky;
 		border-radius: 4px;
 		box-shadow: 0 4px 4px #11111b;
 		z-index: 9999;
