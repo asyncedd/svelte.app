@@ -1,22 +1,16 @@
 <script>
 	import { onMount } from 'svelte';
+	import { afterUpdate } from 'svelte';
 
 	let showPopup = 0;
 	let y = 20;
 	let showedPopup = false;
 
-	async function forY() {
-		try {
-			while (true && showPopup == 1) {
-				if (y > 20) {
-					y = y - 10;
-				} else {
-					y = y + 10;
-				}
-				await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for 1 second before repeating the loop
-			}
-		} catch (err) {
-			console.error(err);
+	function updateY() {
+		if (y > 20) {
+			y -= 10;
+		} else {
+			y += 10;
 		}
 	}
 
@@ -35,10 +29,19 @@
 
 	onMount(() => {
 		handleScroll();
-		forY();
 		window.addEventListener('scroll', handleScroll);
+
+		const interval = setInterval(updateY, 1000); // Update y every 1 second
+
+		afterUpdate(() => {
+			if (!showedPopup) {
+				clearInterval(interval);
+			}
+		});
+
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
+			clearInterval(interval);
 		};
 	});
 </script>
