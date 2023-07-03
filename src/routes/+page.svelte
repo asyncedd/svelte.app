@@ -48,6 +48,7 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
 	rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -99,15 +100,14 @@
 </body>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
 
 	h1 {
-		font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-family: 'JetBrains Mono';
 		@apply m-8 flex place-content-center text-ctp-sky mx-auto text-center text-[100px] antialiased text-transparent;
 		-webkit-text-stroke: 3px #cdd6f4;
 		scroll-behavior: smooth;
