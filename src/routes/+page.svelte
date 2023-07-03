@@ -7,7 +7,7 @@
 
 	async function forY() {
 		try {
-			while (true) {
+			while (true && showPopup == 1) {
 				if (y > 20) {
 					y = y - 10;
 				} else {
@@ -34,8 +34,8 @@
 	}
 
 	onMount(() => {
-		forY();
 		handleScroll();
+		forY();
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
