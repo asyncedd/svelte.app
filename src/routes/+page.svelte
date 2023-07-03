@@ -50,7 +50,7 @@
 />
 
 <div class="popup" style="opacity: {showPopup}; bottom: {y}px;">
-	<span class="material-symbols-outlined"> arrow_circle_down </span>
+	<span class="material-symbols-outlined">arrow_circle_down</span>
 </div>
 
 <body class="dark:bg-ctp-base light:bg-ctp-text">
@@ -112,8 +112,9 @@
 	.popup {
 		position: fixed;
 		bottom: 20px;
-		left: 50%;
+		margin-left: 50%;
 		transform: translateX(-50%);
+		width: 45px;
 		padding: 10px;
 		@apply text-ctp-base bg-ctp-sky;
 		border-radius: 4px;
@@ -124,6 +125,6 @@
 	}
 
 	.material-symbols-outlined {
-		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 45;
 	}
 </style>
