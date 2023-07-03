@@ -106,6 +106,11 @@
 	@tailwind components;
 	@tailwind utilities;
 
+	body {
+		display: grid;
+		margin: 0rem;
+	}
+
 	h1 {
 		font-family: 'JetBrains Mono';
 		@apply m-8 flex place-content-center text-ctp-sky mx-auto text-center text-[100px] antialiased text-transparent;
