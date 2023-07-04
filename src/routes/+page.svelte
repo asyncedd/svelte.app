@@ -125,12 +125,16 @@
 		transform: translateX(-50%);
 		width: 45px;
 		padding: 10px;
-		@apply text-ctp-base bg-ctp-sky;
+		@apply text-ctp-base bg-ctp-sky text-center;
 		border-radius: 4px;
 		box-shadow: 0px 4px 4px 0px rgba(137, 220, 235, 0.5);
 		z-index: 9999;
-		transition: opacity 0.5s ease-out, bottom 0.5s ease-in; /* Added transition property */
-		pointer-events: none; /* Disable pointer events */
+		transition: opacity 0.5s ease-out, bottom 0.5s ease-in, width 0.5s ease-in, padding 0.5s ease-in; /* Added transition property */
+	}
+
+	.popup:hover {
+		width: 100px;
+		padding: 20px;
 	}
 
 	.material-symbols-outlined {
