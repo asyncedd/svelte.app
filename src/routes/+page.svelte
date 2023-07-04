@@ -71,43 +71,23 @@
 
 <body class="dark:bg-ctp-base light:bg-ctp-text">
 	<span class="inline-block align-middle" />
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
-	<h1>HI</h1>
+	<div class="bg-ctp-blue">
+		<h1>HI</h1>
+	</div>
+	<p class="text-ctp-text" style="padding: 100px">hi</p>
+	<div class="wave">
+		<svg
+			data-name="Layer 1"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 1200 120"
+			preserveAspectRatio="none"
+		>
+			<path
+				d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+				class="shape-fill"
+			/>
+		</svg>
+	</div>
 </body>
 
 <style>
@@ -122,11 +102,15 @@
 		margin: 0rem;
 	}
 
+	p {
+		@apply text-center;
+	}
+
 	h1 {
 		font-family: 'JetBrains Mono';
-		@apply m-8 flex place-content-center text-ctp-sky mx-auto text-center text-[100px] antialiased text-transparent;
-		-webkit-text-stroke: 3px #cdd6f4;
+		@apply m-8 flex place-content-center mx-auto text-center text-[100px] antialiased text-ctp-text;
 		scroll-behavior: smooth;
+		z-index: 10;
 	}
 
 	.popup {
@@ -150,5 +134,25 @@
 
 	.material-symbols-outlined {
 		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 45;
+	}
+
+	.wave {
+		position: absolute;
+		top: 13.3rem;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		line-height: 0;
+	}
+
+	.wave svg {
+		position: relative;
+		display: block;
+		width: calc(100% + 1.3px);
+		height: 157px;
+	}
+
+	.wave .shape-fill {
+		fill: #89b4fa;
 	}
 </style>
