@@ -61,8 +61,8 @@
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 />
 
-<div class="popup" style="opacity: {showPopup}; bottom: {y}px;">
-	<span class="material-symbols-outlined" on:click={scrollDown}>arrow_circle_down</span>
+<div class="popup" style="opacity: {showPopup}; bottom: {y}px;" on:click={scrollDown}>
+	<span class="material-symbols-outlined">arrow_circle_down</span>
 </div>
 
 <body class="dark:bg-ctp-base light:bg-ctp-text">
