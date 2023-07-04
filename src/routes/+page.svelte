@@ -1,61 +1,60 @@
-<script>
-	import { onMount } from 'svelte';
-	import { afterUpdate } from 'svelte';
+<script lang="ts">
+import { onMount, afterUpdate } from 'svelte';
 
-	let showPopup = 0;
-	let y = 20;
-	let showedPopup = false;
-	let scrolledPopup = false;
+let showPopup: number = 0;
+let y: number = 20;
+let showedPopup: boolean = false;
+let scrolledPopup: boolean = false;
 
-	function updateY() {
-		if (y > 20) {
-			y -= 10;
-		} else {
-			y += 10;
-		}
-	}
+function updateY(): void {
+  if (y > 20) {
+    y -= 10;
+  } else {
+    y += 10;
+  }
+}
 
-	function handleScroll() {
-		const threshold = 100; // Adjust this value as needed
-		if (!(window.scrollY > threshold) && !showedPopup) {
-			y = 20;
-			showPopup = 1;
-			showedPopup = true;
-		} else {
-			y = 0;
-			showPopup = 0;
-			showedPopup = true;
-		}
-	}
+function handleScroll(): void {
+  const threshold: number = 100; // Adjust this value as needed
+  if (!(window.scrollY > threshold) && !showedPopup) {
+    y = 20;
+    showPopup = 1;
+    showedPopup = true;
+  } else {
+    y = 0;
+    showPopup = 0;
+    showedPopup = true;
+  }
+}
 
-	function scrollDown() {
-		if (scrolledPopup != true) {
-			scrolledPopup = true;
-			window.scrollTo({
-				top: 500,
-				behavior: 'smooth'
-			});
-		}
-	}
+function scrollDown(): void {
+  if (scrolledPopup !== true) {
+    scrolledPopup = true;
+    window.scrollTo({
+      top: 500,
+      behavior: 'smooth',
+    });
+  }
+}
 
-	onMount(() => {
-		handleScroll();
-		window.addEventListener('scroll', handleScroll);
+onMount(() => {
+  handleScroll();
+  window.addEventListener('scroll', handleScroll);
 
-		updateY();
-		const interval = setInterval(updateY, 1000); // Update y every 1 second
+  updateY();
+  const interval = setInterval(updateY, 1000); // Update y every 1 second
 
-		afterUpdate(() => {
-			if (!showedPopup) {
-				clearInterval(interval);
-			}
-		});
+  afterUpdate(() => {
+    if (!showedPopup) {
+      clearInterval(interval);
+    }
+  });
 
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-			clearInterval(interval);
-		};
-	});
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+    clearInterval(interval);
+  };
+});
 </script>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" />
