@@ -150,7 +150,7 @@
 		display: block;
 		width: calc(100% + 1.3px);
 		height: 157px;
-		animation: wave-animation 50s ease-in-out infinite alternate;
+		animation: wave-animation 25s ease-in-out infinite alternate;
 	}
 
 	@keyframes wave-animation {
@@ -158,7 +158,7 @@
 			width: calc(100% + 1px);
 		}
 		100% {
-			width: calc(100% + 1000px);
+			width: calc(100% + 100px);
 		}
 	}
 
