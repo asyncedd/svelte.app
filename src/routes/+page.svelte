@@ -145,7 +145,7 @@
 
 	.popup:hover {
 		width: 100px;
-		padding: 20px;
+		padding: 30px;
 	}
 
 	.material-symbols-outlined {
