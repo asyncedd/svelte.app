@@ -5,6 +5,7 @@
 	let showPopup = 0;
 	let y = 20;
 	let showedPopup = false;
+	let scrolledPopup = false;
 
 	function updateY() {
 		if (y > 20) {
@@ -28,10 +29,13 @@
 	}
 
 	function scrollDown() {
-		window.scrollTo({
-			top: 500,
-			behavior: 'smooth'
-		});
+		if (scrolledPopup != true) {
+			scrolledPopup = true;
+			window.scrollTo({
+				top: 500,
+				behavior: 'smooth'
+			});
+		}
 	}
 
 	onMount(() => {
