@@ -108,7 +108,7 @@
 
 	h1 {
 		font-family: 'JetBrains Mono';
-		@apply m-8 flex place-content-center mx-auto text-center text-[100px] antialiased text-ctp-text;
+		@apply m-8 flex place-content-center mx-auto text-center text-[100px] antialiased text-ctp-base;
 		scroll-behavior: smooth;
 		z-index: 10;
 	}
