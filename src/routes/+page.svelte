@@ -27,6 +27,13 @@
 		}
 	}
 
+	function scrollDown() {
+		window.scrollTo({
+			top: 500,
+			behavior: 'smooth'
+		});
+	}
+
 	onMount(() => {
 		handleScroll();
 		window.addEventListener('scroll', handleScroll);
@@ -55,7 +62,7 @@
 />
 
 <div class="popup" style="opacity: {showPopup}; bottom: {y}px;">
-	<span class="material-symbols-outlined">arrow_circle_down</span>
+	<span class="material-symbols-outlined" on:click={scrollDown}>arrow_circle_down</span>
 </div>
 
 <body class="dark:bg-ctp-base light:bg-ctp-text">
