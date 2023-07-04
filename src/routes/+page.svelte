@@ -74,7 +74,7 @@
 	<div class="bg-ctp-blue">
 		<h1>HI</h1>
 	</div>
-	<p class="text-ctp-text" style="padding: 100px">hi</p>
+	<p class="text-ctp-text" style="padding: 20rem">hi</p>
 	<div class="wave">
 		<svg
 			data-name="Layer 1"
