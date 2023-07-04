@@ -150,6 +150,16 @@
 		display: block;
 		width: calc(100% + 1.3px);
 		height: 157px;
+		animation: wave-animation 50s ease-in-out infinite alternate;
+	}
+
+	@keyframes wave-animation {
+		0% {
+			width: calc(100% + 1px);
+		}
+		100% {
+			width: calc(100% + 1000px);
+		}
 	}
 
 	.wave .shape-fill {
