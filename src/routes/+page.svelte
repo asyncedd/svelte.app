@@ -121,7 +121,7 @@ Vulputate ut pharetra sit amet aliquam id. Id diam maecenas ultricies mi eget ma
 	}
 
 	p {
-		@apply text-center;
+    @apply text-center antialiased;
 	}
 
 	h1 {
