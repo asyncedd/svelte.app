@@ -117,6 +117,7 @@ Vulputate ut pharetra sit amet aliquam id. Id diam maecenas ultricies mi eget ma
 	body {
 		display: grid;
 		margin: 0rem;
+    font-family: 'JetBrains Mono';
 	}
 
 	p {
@@ -124,7 +125,6 @@ Vulputate ut pharetra sit amet aliquam id. Id diam maecenas ultricies mi eget ma
 	}
 
 	h1 {
-		font-family: 'JetBrains Mono';
 		@apply m-8 flex place-content-center mx-auto text-center text-[100px] antialiased text-ctp-base;
 		scroll-behavior: smooth;
 		z-index: 10;
