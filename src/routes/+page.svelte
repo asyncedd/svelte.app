@@ -71,6 +71,7 @@ onMount(() => {
 <body class="dark:bg-ctp-base light:bg-ctp-text">
 	<span class="inline-block align-middle" />
 	<div class="bg-ctp-blue">
+    <img src="/matej-rieciciar-SdDvoAvu384-unsplash.jpg" class="w-24 h-24 md:w-48 md:h-48 rounded-full m-8 flex place-content-center mx-auto text-center" style="z-index: 9999;" alt="" width="384" height="384"> 
 		<h1>HI</h1>
 	</div>
 	<p class="text-ctp-text" style="padding: 20rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et malesuada fames ac. Donec et odio pellentesque diam volutpat commodo sed egestas egestas. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Tempus quam pellentesque nec nam. Risus at ultrices mi tempus imperdiet nulla malesuada. Dui nunc mattis enim ut tellus elementum sagittis vitae et. Pellentesque elit ullamcorper dignissim cras. Ut aliquam purus sit amet. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Donec ac odio tempor orci. Sit amet volutpat consequat mauris nunc congue. Ipsum dolor sit amet consectetur adipiscing elit. Mauris sit amet massa vitae tortor condimentum lacinia quis. Elementum eu facilisis sed odio morbi quis. Euismod elementum nisi quis eleifend quam adipiscing.
@@ -155,7 +156,7 @@ Vulputate ut pharetra sit amet aliquam id. Id diam maecenas ultricies mi eget ma
 
 	.wave {
 		position: absolute;
-		top: 13.3rem;
+		top: 27.3rem;
 		left: 0;
 		width: 100%;
 		overflow: hidden;
