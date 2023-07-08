@@ -1,93 +1,64 @@
 <script lang="ts">
-import { onMount, afterUpdate } from 'svelte';
+  import Hackerman from '../components/hackerman.svelte';
+  import { onMount, afterUpdate } from 'svelte';
 
-let showPopup: number = 0;
-let y: number = 20;
-let showedPopup: boolean = false;
-let scrolledPopup: boolean = false;
+  let showPopup: number = 0;
+  let y: number = 20;
+  let showedPopup: boolean = false;
+  let scrolledPopup: boolean = false;
 
-function updateY(): void {
-  if (y > 20) {
-    y -= 10;
-  } else {
-    y += 10;
+  function updateY(): void {
+    if (y > 20) {
+      y -= 10;
+    } else {
+      y += 10;
+    }
   }
-}
 
-function handleScroll(): void {
-  const threshold: number = 100; // Adjust this value as needed
-  if (!(window.scrollY > threshold) && !showedPopup) {
-    y = 20;
-    showPopup = 1;
-    showedPopup = true;
-  } else {
-    y = 0;
-    showPopup = 0;
-    showedPopup = true;
+  function handleScroll(): void {
+    const threshold: number = 100; // Adjust this value as needed
+    if (!(window.scrollY > threshold) && !showedPopup) {
+      y = 20;
+      showPopup = 1;
+      showedPopup = true;
+    } else {
+      y = 0;
+      showPopup = 0;
+      showedPopup = true;
+    }
   }
-}
 
-function scrollDown(): void {
-  if (scrolledPopup !== true) {
-    scrolledPopup = true;
-    window.scrollTo({
-      top: 500,
-      behavior: 'smooth',
-    });
+  function scrollDown(): void {
+    if (scrolledPopup !== true) {
+      scrolledPopup = true;
+      window.scrollTo({
+        top: 500,
+        behavior: 'smooth',
+      });
+    }
   }
-}
 
-function hackerMan(): void {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  onMount(() => {
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
 
-  let interval = null;
+    updateY();
+    const interval = setInterval(updateY, 1000); // Update y every 1 second
 
-  document.querySelector("h1").onmouseover = event => {
-    let iteration = 0;
-
-    clearInterval(interval);
-
-    interval = setInterval(() => {
-      event.target.innerText = event.target.innerText
-        .split("")
-        .map((letter, index) => {
-          if(index < iteration) {
-            return event.target.dataset.value[index];
-          }
-
-          return letters[Math.floor(Math.random() * 26)]
-        })
-        .join("");
-
-      if(iteration >= event.target.dataset.value.length) {
+    afterUpdate(() => {
+      if (!showedPopup) {
         clearInterval(interval);
       }
+    });
 
-      iteration += 1 / 3;
-    }, 30);
-  }
-}
-
-onMount(() => {
-  hackerMan();
-  handleScroll();
-  window.addEventListener('scroll', handleScroll);
-
-  updateY();
-  const interval = setInterval(updateY, 1000); // Update y every 1 second
-
-  afterUpdate(() => {
-    if (!showedPopup) {
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
       clearInterval(interval);
-    }
+    };
   });
-
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-    clearInterval(interval);
-  };
-});
 </script>
+
+<Hackerman />
 
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
