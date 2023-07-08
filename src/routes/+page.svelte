@@ -37,7 +37,39 @@ function scrollDown(): void {
   }
 }
 
+function hackerMan(): void {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  let interval = null;
+
+  document.querySelector("h1").onmouseover = event => {
+    let iteration = 0;
+
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      event.target.innerText = event.target.innerText
+        .split("")
+        .map((letter, index) => {
+          if(index < iteration) {
+            return event.target.dataset.value[index];
+          }
+
+          return letters[Math.floor(Math.random() * 26)]
+        })
+        .join("");
+
+      if(iteration >= event.target.dataset.value.length) {
+        clearInterval(interval);
+      }
+
+      iteration += 1 / 3;
+    }, 30);
+  }
+}
+
 onMount(() => {
+  hackerMan();
   handleScroll();
   window.addEventListener('scroll', handleScroll);
 
@@ -71,7 +103,9 @@ onMount(() => {
 <body class="dark:bg-ctp-base light:bg-ctp-text">
   <div class="bg-ctp-blue">
     <img src="/matej-rieciciar-SdDvoAvu384-unsplash.jpg" class="w-24 h-24 md:w-48 md:h-48 rounded-full m-8 flex place-content-center mx-auto text-center" style="z-index: 9999;" alt="" width="384" height="384"> 
-    <h1>HI</h1>
+    <div class="container">
+      <h1 data-value="HI" class="m-8 w-10 text-center text-[100px] antialiased text-ctp-base">HI</h1>
+    </div>
   </div>
   <p class="text-ctp-text" style="padding: 20rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et malesuada fames ac. Donec et odio pellentesque diam volutpat commodo sed egestas egestas. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Tempus quam pellentesque nec nam. Risus at ultrices mi tempus imperdiet nulla malesuada. Dui nunc mattis enim ut tellus elementum sagittis vitae et. Pellentesque elit ullamcorper dignissim cras. Ut aliquam purus sit amet. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Donec ac odio tempor orci. Sit amet volutpat consequat mauris nunc congue. Ipsum dolor sit amet consectetur adipiscing elit. Mauris sit amet massa vitae tortor condimentum lacinia quis. Elementum eu facilisis sed odio morbi quis. Euismod elementum nisi quis eleifend quam adipiscing.
 
@@ -117,17 +151,26 @@ onMount(() => {
   body {
     display: grid;
     margin: 0rem;
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono', monospace;
   }
 
   p {
     @apply text-center antialiased;
   }
 
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
   h1 {
-    @apply m-8 flex place-content-center mx-auto text-center text-[100px] antialiased text-ctp-base;
+    @apply text-center;
+    width: 150px;
     scroll-behavior: smooth;
-    z-index: 10;
   }
 
   .popup {
@@ -155,7 +198,7 @@ onMount(() => {
 
   .wave {
     position: absolute;
-    top: 27.3rem;
+    top: 29.3rem;
     left: 0;
     width: 100%;
     overflow: hidden;
