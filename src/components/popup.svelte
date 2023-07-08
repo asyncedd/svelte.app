@@ -36,7 +36,7 @@
     }
   }
 
-  onMount(() => {
+  async function initializePopupCode() {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
 
@@ -53,7 +53,9 @@
       window.removeEventListener('scroll', handleScroll);
       clearInterval(interval);
     };
-  });
+  }
+
+  onMount(initializePopupCode)
 </script>
 
 <div class="popup" style="opacity: {showPopup}; bottom: {y}px;" on:click={scrollDown}>
