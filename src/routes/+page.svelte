@@ -24,7 +24,14 @@
 </body>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+  /* jetbrains-mono-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('..../static/fonts/jetbrains-mono-v18-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
 
   @tailwind base;
   @tailwind components;
