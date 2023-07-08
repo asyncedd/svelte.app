@@ -1,6 +1,7 @@
 <script lang="ts">
   import Hackerman from '../components/hackerman.svelte';
   import Wave from '../components/wave.svelte';
+  import Font from '../components/fonts.svelte'
   import { onMount, afterUpdate } from 'svelte';
 
   let showPopup: number = 0;
@@ -59,14 +60,9 @@
   });
 </script>
 
-<Hackerman />
+<Font />
 
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-/>
+<Hackerman />
 
 <div class="popup" style="opacity: {showPopup}; bottom: {y}px;" on:click={scrollDown}>
   <span class="material-symbols-outlined">arrow_circle_down</span>
