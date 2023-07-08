@@ -2,71 +2,14 @@
   import Hackerman from '../components/hackerman.svelte';
   import Wave from '../components/wave.svelte';
   import Font from '../components/fonts.svelte'
-  import { onMount, afterUpdate } from 'svelte';
-
-  let showPopup: number = 0;
-  let y: number = 20;
-  let showedPopup: boolean = false;
-  let scrolledPopup: boolean = false;
-
-  function updateY(): void {
-    if (y > 20) {
-      y -= 10;
-    } else {
-      y += 10;
-    }
-  }
-
-  function handleScroll(): void {
-    const threshold: number = 100; // Adjust this value as needed
-    if (!(window.scrollY > threshold) && !showedPopup) {
-      y = 20;
-      showPopup = 1;
-      showedPopup = true;
-    } else {
-      y = 0;
-      showPopup = 0;
-      showedPopup = true;
-    }
-  }
-
-  function scrollDown(): void {
-    if (scrolledPopup !== true) {
-      scrolledPopup = true;
-      window.scrollTo({
-        top: 500,
-        behavior: 'smooth',
-      });
-    }
-  }
-
-  onMount(() => {
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-
-    updateY();
-    const interval = setInterval(updateY, 1000); // Update y every 1 second
-
-    afterUpdate(() => {
-      if (!showedPopup) {
-        clearInterval(interval);
-      }
-    });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearInterval(interval);
-    };
-  });
+  import Popup from '../components/popup.svelte'
 </script>
+
+<Popup />
 
 <Font />
 
 <Hackerman />
-
-<div class="popup" style="opacity: {showPopup}; bottom: {y}px;" on:click={scrollDown}>
-  <span class="material-symbols-outlined">arrow_circle_down</span>
-</div>
 
 <body class="dark:bg-ctp-base light:bg-ctp-text">
   <div class="bg-ctp-blue">
