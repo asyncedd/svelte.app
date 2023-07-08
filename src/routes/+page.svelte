@@ -38,23 +38,16 @@
   @tailwind utilities;
 
   body {
-    display: grid;
-    margin: 0rem;
+    @apply grid m-[0rem];
     font-family: 'JetBrains Mono', monospace;
   }
 
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: 50%;
+    @apply flex justify-center items-center text-center ml-[50%];
     transform: translateX(-50%);
   }
 
   h1 {
-    @apply text-center;
-    width: 150px;
-    scroll-behavior: smooth;
+    @apply text-center w-[150px] scroll-smooth;
   }
 </style>
